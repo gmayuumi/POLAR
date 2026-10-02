@@ -5,14 +5,14 @@ HTML, CSS e JavaScript puros: não precisa de build nem de servidor especial.
 
 ## Páginas
 
-| Arquivo         | Página                                                      |
-| --------------- | ----------------------------------------------------------- |
-| `index.html`    | Início: apresentação, diagrama do circuito, avaliações, endereço |
-| `servicos.html` | Serviços, peça por peça e no sistema todo                    |
-| `sobre.html`    | A Polar: jeito de trabalhar, avaliações, dados da oficina    |
-| `duvidas.html`  | Sinais de problema e perguntas frequentes                    |
-| `contato.html`  | Formulário que monta a mensagem do WhatsApp, horário e mapa  |
-| `404.html`      | Página não encontrada                                        |
+| Arquivo         | Página                                                                 |
+| --------------- | ---------------------------------------------------------------------- |
+| `index.html`    | Início: destaque com agendamento rápido, serviços, carros, vídeo, avaliações, visita |
+| `servicos.html` | Serviços, diagrama do circuito do ar e carros elétricos                |
+| `sobre.html`    | A Polar: história, jeito de trabalhar, fotos da oficina, avaliações    |
+| `duvidas.html`  | Sinais de problema e perguntas frequentes                              |
+| `contato.html`  | Formulário que monta a mensagem do WhatsApp, telefones, horário e mapa |
+| `404.html`      | Página não encontrada                                                  |
 
 ## Ver no computador
 
@@ -25,26 +25,50 @@ python3 -m http.server 8000
 
 ```
 assets/
-  css/style.css      estilos (cores e escala tipográfica no topo, em :root)
-  js/main.js         menu do celular, "aberto agora", mapa sob demanda, formulário do WhatsApp
-  js/circuit.js      desenha o diagrama do circuito do ar (versão larga e versão para celular)
+  css/style.css      estilos (cores e escala de texto no topo, em :root)
+  js/main.js         menu, "aberto agora", agendamento rápido, mapa sob demanda, formulário do WhatsApp
+  js/circuit.js      desenha o diagrama do circuito do ar na página Serviços
   fonts/             Archivo (fonte variável, licença SIL OFL)
-  img/               logo com fundo transparente, favicon e imagem para redes sociais
+  img/               logo, favicon e imagem para redes sociais
+  img/fotos/         fotos do site (já recortadas e comprimidas)
+  video/             vídeo curto dos manômetros (sem som, em loop)
 ```
 
 ## Design
 
-Estilo tipográfico suíço: grade de 12 colunas, títulos de seção pendurados à esquerda,
-texto alinhado à esquerda e uma única família tipográfica (Archivo) usada em larguras
-diferentes. A cor é o azul do logo sobre branco. Vermelho e azul claro aparecem só no
-diagrama do circuito, como nos manômetros de alta e baixa pressão.
+Inspirado na referência enviada: menu flutuante em pílula sobre fotos escuras, títulos
+largos e pesados (fonte Archivo), barra de agendamento sobreposta ao destaque, cards
+altos de foto com botão redondo, seções cinza-claro e faixas azul-noite. O azul dos
+botões conversa com o azul do logo.
+
+## Fotos
+
+**Da Polar** (Instagram @oficinapolar_indaiatuba e fotos enviadas): oficina nova,
+Porsche com manômetros, troca de condensador, Renault Zoe, Ford Landau, Astra, cartões
+de visita e o vídeo dos manômetros. As placas dos carros de clientes foram desfocadas.
+
+**Banco de imagens** (Unsplash, licença livre para uso comercial, sem atribuição
+obrigatória):
+
+| Arquivo                     | Foto de             |
+| --------------------------- | ------------------- |
+| `hero-inicio.jpg`           | Ben Hessler (placa desfocada) |
+| `banner-esportivo.jpg`      | Matthew McKinney    |
+| `hero-servicos.jpg`         | Kate Ibragimova     |
+| `hero-duvidas.jpg`          | Ivan Kohut          |
+| `hero-contato.jpg`          | Olav Tvedt          |
+| `servico-higienizacao.jpg`  | Philipp Katzenberger |
+| `servico-compressor.jpg`    | Christian Buehner   |
+
+Quando a Polar tiver fotos próprias para esses espaços, basta trocar os arquivos
+mantendo o mesmo nome.
 
 ## Editar conteúdo
 
 - Cabeçalho, faixa "Pare de passar calor" e rodapé se repetem em todas as páginas.
   Ao mudar telefone, endereço ou horário, procure e substitua em todos os `.html`.
 - O horário usado no aviso "Aberto agora" fica em `assets/js/main.js` (`HOURS`).
-- O WhatsApp aparece como `5519971567104` nos links `wa.me`.
+- O WhatsApp aparece como `5519971567104` nos links `wa.me` e em `main.js`.
 
 ## Publicar
 
@@ -58,17 +82,16 @@ Hostinger etc.). Depois de definir o domínio:
 
 ## De onde veio o conteúdo
 
-Perfil da empresa no Google (endereço, telefone, horário, nota e avaliações), legendas
-públicas do Instagram @oficinapolar_indaiatuba e o site antigo no Webnode (2014).
+Perfil da empresa no Google (endereço, horário, nota e avaliações), cartão de visita
+(WhatsApp com o Edinei e telefone fixo), legendas públicas do Instagram e o site antigo
+no Webnode (2014).
 
 ## Para confirmar com a Polar
 
-- Fotos reais da oficina e dos serviços (o site foi desenhado para funcionar sem elas,
-  mas fotos podem entrar no herói e na página A Polar).
-- Logo em vetor (SVG, PDF ou AI). O atual é um JPG de 613 × 432 px.
-- Prazo de garantia dos serviços (o site antigo dizia três meses; o site novo diz
-  apenas que o prazo vem no orçamento).
-- Telefone fixo (19) 3016-1134 ainda funciona? Não foi incluído.
+- Prazo de garantia. O banner antigo da oficina diz "três meses de garantia"; o site diz
+  apenas que o prazo vem no orçamento.
+- Logo em vetor (SVG, PDF ou AI). O atual é um JPG de 613 × 432 px. Os cartões azuis
+  mostram uma versão branca do logo que ficaria ótima nas faixas escuras.
 - E-mail de contato (o antigo era @ig.com.br). Não foi incluído.
 - A unidade de Salto (Rua Rússia, 47) deve aparecer no site?
 - Página do Facebook a ser linkada.
